@@ -120,7 +120,7 @@
     margin: 0;
 
     .reaction-emoji {
-      width: var(--emoji-size);
+      max-width: calc(7 * var(--emoji-size));
       height: var(--emoji-size);
       margin-right: 0.25em;
       line-height: var(--emoji-size);
