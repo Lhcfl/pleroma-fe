@@ -164,7 +164,7 @@
           class="input form-control"
         >
           <template #default="inputProps">
-            <input
+            <textarea
               v-model="newStatus.spoilerText"
               type="text"
               :placeholder="$t('post_status.content_warning')"
@@ -172,7 +172,7 @@
               v-bind="propsToNative(inputProps)"
               size="1"
               class="input form-post-subject"
-            >
+            />
           </template>
         </EmojiInput>
         <EmojiInput
@@ -549,6 +549,10 @@
     line-height: 1.85;
   }
 
+  .input.form-post-subject {
+    min-height: calc(var(--post-line-height) * 1em);
+  }
+
   .input.form-post-body {
     // TODO: make a resizable textarea component?
     box-sizing: content-box; // needed for easier computation of dynamic size
@@ -561,6 +565,7 @@
     min-height: calc(var(--post-line-height) * 1em);
     resize: none;
     background: transparent;
+    min-height: 100px;
 
     &.scrollable-form {
       overflow-y: auto;
